@@ -1,12 +1,18 @@
-import { View, Text, StyleSheet, FlatList, Image } from "react-native";
+import { View, Text, StyleSheet, FlatList, Image, ScrollView } from "react-native";
 
 import Logo from "../../assets/logo.svg";
 import Stroke from "../../assets/stroke.svg";
 import Message from "../../assets/message.svg";
-import foto from "../../assets/foto.png";
-import foto2 from "../../assets/foto2.png";
-import foto3 from "../../assets/foto3.png";
-import foto4 from "../../assets/foto4.png";
+import Points from "../../assets/points.svg";
+import Bookmark from "../../assets/Bookmark.svg";
+import Heart from "../../assets/Heart.svg";
+import Comment from "../../assets/Comment.svg";
+import Share from "../../assets/Share.svg";
+import foto from "../../assets/image1.jpg";
+import foto2 from "../../assets/image2.jpg";
+import foto3 from "../../assets/image3.jpg";
+import foto4 from "../../assets/image4.jpg";
+import gutsTest from "../../assets/FJTvX6tX0AQG-53.jpg";
 
 const DATA = [
     {
@@ -72,16 +78,47 @@ export function Home()
             </View>
 
         </View>
-
+      <ScrollView style={{width: "100%"}}>
         <View style={styles.stories}>
                 <FlatList horizontal={true} data={DATA} 
                 keyExtractor={(item) => item.id}
                 renderItem={(item) => (
                 <View style={styles.storiesCard} key={item.item.id}>
-                    <Image style={styles.storiesCardImage} source={item.item.photoURL}/>
+                    <Image  resizeMode="cover" style={styles.storiesCardImage} source={item.item.photoURL}/>
                 </View>
                 )}/>
+        </View>
+
+        <View style={styles.content}>
+          <View style={styles.contentHeader}>
+            <View style={styles.contentHeaderLeft}>
+              <Image style={styles.contentHeaderLeftImage} source={foto} resizeMode="cover"/>
+              <Text style={styles.contentHeaderLeftText}>Vinicius Soares</Text>
             </View>
+            <Points/>
+          </View>
+          <View>
+            <Image style={styles.contentImage} source={gutsTest} resizeMode="contain"/>
+          </View>
+        </View>
+
+        <View style={styles.contentFooter}>
+          <View style={{width: "100%", flexDirection: "row", justifyContent: "space-between"}}>
+          
+          <View style={styles.contentFooterLeft}>
+            <Heart/>
+            <Comment/>
+            <Share/>
+          </View>
+          <Bookmark/>
+          </View>
+          <View style={{gap: 10, marginTop: 10, paddingLeft: 10}}>
+            <Text style={{color: "#FFF"}}>vinicius soares Aqui vai a legenda da publicação.</Text>
+            <Text style={{color: "#FFF"}}>Veja todos os comentários.</Text>
+            <Text style={{color: "#FFF", fontSize: 10}}>1 hora atŕas Veja a tradução</Text>
+          </View>
+        </View>
+      </ScrollView>  
     </View>
   )
 }
@@ -126,7 +163,46 @@ const styles = StyleSheet.create(
   },
   storiesCardImage: {
     width: 64,
-    height: 64
+    height: 64,
+    borderRadius: 100
+  },
+  content: {
+    width: "100%",
+    marginBottom: 10
+  },
+  contentHeader: {
+    height: 52,
+    alignItems: "center",
+    justifyContent: "space-between",
+    flexDirection: "row",
+    paddingHorizontal: 15
+  },
+  contentHeaderLeft: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10
+  },
+  contentHeaderLeftImage: {
+    width: 30,
+    height: 30,
+    borderRadius: 25
+  },
+  contentHeaderLeftText: {
+    color: "#FFF"
+  },
+  contentImage: {
+    width: "100%",
+    height: 500,
+  },
+  contentFooter: {
+    width: "100%",
+    paddingHorizontal: 10,
+    marginTop: 10
+  },
+  contentFooterLeft: {
+    alignItems: "center",
+    flexDirection: "row",
+    gap: 10
   }
 }
 );
