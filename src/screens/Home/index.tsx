@@ -118,7 +118,68 @@ export function Home()
             <Text style={{color: "#FFF", fontSize: 10}}>1 hora atŕas Veja a tradução</Text>
           </View>
         </View>
-      </ScrollView>  
+
+        <View style={styles.content}>
+          <View style={styles.contentHeader}>
+            <View style={styles.contentHeaderLeft}>
+              <Image style={styles.contentHeaderLeftImage} source={foto} resizeMode="cover"/>
+              <Text style={styles.contentHeaderLeftText}>Vinicius Soares</Text>
+            </View>
+            <Points/>
+          </View>
+          <View>
+            <Image style={styles.contentImage} source={gutsTest} resizeMode="contain"/>
+          </View>
+        </View>
+
+        <View style={styles.contentFooter}>
+          <View style={{width: "100%", flexDirection: "row", justifyContent: "space-between"}}>
+          
+          <View style={styles.contentFooterLeft}>
+            <Heart/>
+            <Comment/>
+            <Share/>
+          </View>
+          <Bookmark/>
+          </View>
+          <View style={{gap: 10, marginTop: 10, paddingLeft: 10}}>
+            <Text style={{color: "#FFF"}}>vinicius soares Aqui vai a legenda da publicação.</Text>
+            <Text style={{color: "#FFF"}}>Veja todos os comentários.</Text>
+            <Text style={{color: "#FFF", fontSize: 10}}>1 hora atŕas Veja a tradução</Text>
+          </View>
+        </View>
+
+        <View style={styles.content}>
+          <View style={styles.contentHeader}>
+            <View style={styles.contentHeaderLeft}>
+              <Image style={styles.contentHeaderLeftImage} source={foto} resizeMode="cover"/>
+              <Text style={styles.contentHeaderLeftText}>Vinicius Soares</Text>
+            </View>
+            <Points/>
+          </View>
+          <View>
+            <Image style={styles.contentImage} source={gutsTest} resizeMode="contain"/>
+          </View>
+        </View>
+
+        <View style={styles.contentFooter}>
+          <View style={{width: "100%", flexDirection: "row", justifyContent: "space-between"}}>
+          
+          <View style={styles.contentFooterLeft}>
+            <Heart/>
+            <Comment/>
+            <Share/>
+          </View>
+          <Bookmark/>
+          </View>
+          <View style={{gap: 10, marginTop: 10, paddingLeft: 10}}>
+            <Text style={{color: "#FFF"}}>vinicius soares Aqui vai a legenda da publicação.</Text>
+            <Text style={{color: "#FFF"}}>Veja todos os comentários.</Text>
+            <Text style={{color: "#FFF", fontSize: 10}}>1 hora atŕas Veja a tradução</Text>
+          </View>
+        </View>
+      </ScrollView>
+        
     </View>
   )
 }
@@ -156,7 +217,7 @@ const styles = StyleSheet.create(
   storiesCard: {
     alignItems: "center",
     borderWidth: 2,
-    borderColor: "#F7B55A",
+    borderColor: "#F00",
     borderRadius: 50,
     marginRight: 14,
     padding: 2
